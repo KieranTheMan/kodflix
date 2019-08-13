@@ -24,6 +24,3 @@ export default function AllMovies() {
     </div>
   );
 }
- {/* <div className="Cover">
-        <img src={MetalLogo} alt="MetalLogo"/>
-    </div> */}
