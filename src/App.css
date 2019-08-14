@@ -4,38 +4,41 @@ img {
 }
 
 .Movies { 
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
 }
 
 .item {
-  flex: 1;
   position: relative;
   overflow: hidden;
 }
 
 .Overlay {
-    transition: bottom ease-in-out 1s;
-    display: block;
-    position: absolute;
-    background-color: blue;
-    bottom: -100px;
-    bottom: left;
-    width: 100%;
-    text-align: center;
-    font-family: Impact, sans-serif;
-    opacity: .7;
+  transition: bottom ease-in-out 1s;
+  display: block;
+  position: absolute;
+  color: white;
+  background-color: rgb(74, 74, 190);
+  bottom: -120px;
+  width: 100%;
+  text-align: center;
+  font-family: Impact, sans-serif;
+  opacity: .6;
 }
 
 .item:hover .Overlay {
   display: block;
-  opacity: 1;
+  opacity: 3;
   bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
-  .Movies {
-  flex-direction: column;
+.Movies {
+  display: block;
+  }
 
+.item:hover .Overlay {
+    display: block;
   }
 }
