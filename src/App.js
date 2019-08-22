@@ -7,10 +7,10 @@ import './App.css';
 function App() {
   return (
     <Router>
-       <div className='app'>
-      <Route exact path='/' component={AllMovies}/>
-      <Route exact path='/details' component={Details}/>
-  </div>
+        <div className='app'>
+            <Route exact path='/' component={AllMovies}/>
+            <Route exact path='/:movieID' component={Details}/>
+        </div>
     </Router>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import MovieItems from './MoviesComp';
 import MoviesGet from './MoviesGet';
+
 export default function AllMovies() {
     return (
         <div>
