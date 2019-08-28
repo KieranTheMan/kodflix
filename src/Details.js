@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import getMovies from './MoviesGet.js';
 
 // export default function Details(props) {
@@ -25,12 +26,15 @@ export default class app extends React.Component {
         let movies = getMovies().find(movie => movie.id === movieID);
             this.setState({movies: movies});
         }
+        
         render() {
             return (
-                <div>
-                    <h1>{this.state.movies.name}</h1>
-                </div>
-            );
+                this.state.movies === undefined ?
+                <Redirect to='/notFound' /> :
+                    <div>
+                        <h1>{this.state.movies.name}</h1>
+                        <Link to='/'>Back to home page</Link>
+                    </div>
+                );
         }
 }
-
