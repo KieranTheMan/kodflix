@@ -6,7 +6,7 @@ function movieItems (props) {
       <Link to= {props.id} className='item'>
            <img src={props.img} alt={props.alt}/>
            <div className='Overlay'>
-              <h1>{props.name}</h1>  
+              <div>{props.name}</div>  
            </div>
       </Link>
     );

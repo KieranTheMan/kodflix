@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
-import getMovies from './MoviesGet.js';
+import getMovies from '../MoviesGet.js';
+import './Details.css'
 
 // export default function Details(props) {
 
@@ -31,10 +32,21 @@ export default class app extends React.Component {
             return (
                 this.state.movies === undefined ?
                 <Redirect to='/notFound' /> :
-                    <div>
-                        <h1>{this.state.movies.name}</h1>
-                        <Link to='/'>Back to home page</Link>
-                    </div>
+                    <div className='Details'>
+                        
+                                <div className='text'>
+                                <div className='movieName'>
+                        {this.state.movies.name}
+                        </div>
+                                    {this.state.movies.synopsis}
+                                    <Link to='/'>Back to movies</Link>
+                                </div>
+                                <div className='image'>
+                                        <img 
+                                        src={this.state.movies.img}
+                                        alt={this.state.movies.name}/>
+                                </div>
+                                </div>
                 );
         }
 }
