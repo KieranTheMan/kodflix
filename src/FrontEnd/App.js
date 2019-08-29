@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import React from "react";
 import AllMovies from './AllMovies';
-import Details from './Details/Details.js';
+import Details from './/Details/Details.js';
 import NotFound from './notFound';
 import './App.css';
 
