@@ -10,6 +10,7 @@
     "react-scripts": "3.0.1",
     "run-all": "^1.0.1"
   },
+  "proxy": "http://localhost:3001",
   "scripts": {
     "start-backend": "node src/BackEnd/app.js",
     "start-all": "npm-run-all -p start-backend start",
