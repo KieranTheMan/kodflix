@@ -14,7 +14,7 @@ export default class AllMovies extends React.Component {
   fetchMovies() {
     fetch("rest/shows")
       .then(res => res.json())
-      .then(data => this.setState({ shows: data }))
+      .then(data => console.log(data))
       .catch(error => this.setState({ error }));
   }
 
