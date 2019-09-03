@@ -14,7 +14,7 @@
   "scripts": {
     "start-backend": "node src/BackEnd/app.js",
     "start-dev": "npm-run-all -p start-backend start",
-    "start": "react-scripts start",
+    "start": "react-scripts build start-backend",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
