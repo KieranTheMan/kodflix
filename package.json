@@ -13,7 +13,7 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start-backend": "node src/BackEnd/app.js",
+    "start-backend": "node src/BackEnd/App.js",
     "start-frontend": "react-scripts start",
     "start": "npm-run-all -s build start-backend",
     "start-dev": "npm-run-all -p start start-backend",
