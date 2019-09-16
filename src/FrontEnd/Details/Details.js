@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
-import getMovies from "../MoviesGet.js";
 import "./Details.css";
 
 // export default function Details(props) {
@@ -19,29 +18,34 @@ export default class app extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: {}
+      movie: {}
     };
   }
   componentDidMount() {
     let movieID = this.props.match.params.movieID;
-    let movies = getMovies().find(movie => movie.id === movieID);
-    this.setState({ movies: movies });
+    fetch("rest/shows")
+      .then(res => res.json())
+      .then(data => this.setState({ movie: data.find(movie => movie.id === movieID) }))
+      .then(() => console.log(this.state.movie))
+      .catch(error => this.setState({ error }));
+    // let movies = getMovies().find(movie => movie.id === movieID);
+    // this.setState({ movies: movies });
   }
 
   render() {
-    return this.state.movies === undefined ? (
+    return this.state.movie === undefined ? (
       <Redirect to="/notFound" />
-    ) : (
+    ) : (this.state.movie.id) ? (
       <div className="Details">
         <div className="text">
-          <div className="movieName">{this.state.movies.name}</div>
-          {this.state.movies.synopsis}
+          <div className="movieName">{this.state.movie.name}</div>
+          {this.state.movie.synopsis}
           <Link to="/">Back to movies</Link>
         </div>
         <div className="image">
-          <img src={this.state.movies.img} alt={this.state.movies.name} />
+          <img src={require(`../images/${this.state.movie.id}.jpg`)} alt='' />} alt={this.state.movie.name} />
         </div>
       </div>
-    );
+    ) : <div></div>
   }
 }

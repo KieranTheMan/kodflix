@@ -1,6 +1,5 @@
 import React from "react";
-import MovieItems from "./MoviesComp";
-import MoviesGet from "./MoviesGet";
+import MovieItems from "./MovieItems";
 
 export default class AllMovies extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export default class AllMovies extends React.Component {
   fetchMovies() {
     fetch("rest/shows")
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => this.setState({shows: data}))
       .catch(error => this.setState({ error }));
   }
 
@@ -26,13 +25,13 @@ export default class AllMovies extends React.Component {
       <div>
         <div className="Movies">
           {" "}
-          {MoviesGet().map(movie => {
+          {this.state.shows.map(movie => {
             return (
               <MovieItems
                 key={movie.id}
                 id={movie.id}
                 name={movie.name}
-                img={movie.img}
+                img={require(`./images/${movie.id}.jpg`)}
                 alt={movie.alt}
               />
             );
