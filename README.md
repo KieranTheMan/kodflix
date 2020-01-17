@@ -22,7 +22,7 @@ This application was developed using the latest and greatest technology,  utilis
   <li>The backend server allows integration with third party components like saving the list of shows in a database.</li>
   <li>Included hot reloading with nodemon for the backend server to automatically refresh, when introducing changes within the code</li>
     <li>Front and backend server are able to be executed with a single <b>NPM</b> command by adding run-all to the package.json dependencies, so       they run parallel with each other.</li>
-  <li>Integrated front and back end data by enabling a proxy using the fetch api, to call data from the frontend.  Then Merged backend         and frontend servers on a single port to push to <b>Heroku</b><li>.
+  <li>Integrated front and back end data by enabling a proxy using the fetch api, to call data from the frontend.  Then Merged backend         and frontend servers on a single port to push to <b>Heroku</b></li>.
 </ul>
 
 ## Design
