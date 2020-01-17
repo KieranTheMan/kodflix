@@ -17,13 +17,12 @@ This application was developed using the latest and greatest technology,  utilis
 
 ### BackEnd:
 <ul>
-  <li>Node.Js is used with the Express.JS framework.</li>
+  <li>Node.Js is used with the <b>Express.JS</b> framework.</li>
   <li>The list of shows are returned from the backend using the common.js  export/require pattern, this enables better security as data       running in the browser is not really safe.</li>
   <li>The backend server allows integration with third party components like saving the list of shows in a database.</li>
   <li>Included hot reloading with nodemon for the backend server to automatically refresh, when introducing changes within the code</li>
-  <li>Front and backend server are able to be executed with a single NPM command by adding run-all to the package.json dependencies, so       they run parallel with each other.</li>
-
-Integrated front and back end data by enabling a proxy using the fetch api, to call data from the frontend.  Then Merged backend and frontend servers on a single port to push to <b>Heroku</b>.
+    <li>Front and backend server are able to be executed with a single <b>NPM</b> command by adding run-all to the package.json dependencies, so       they run parallel with each other.</li>
+  <li>Integrated front and back end data by enabling a proxy using the fetch api, to call data from the frontend.  Then Merged backend         and frontend servers on a single port to push to <b>Heroku</b><li>.
 </ul>
 
 ## Design
